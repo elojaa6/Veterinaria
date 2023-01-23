@@ -1,0 +1,23 @@
+<ion-content class="ion-padding">
+  <h1>Bienvenido</h1>
+  <h3>Iniciar sesión para continuar!</h3>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="form-field">
+      <label [ngClass]="focused ? 'label-focused' : ''">Correo Electronico</label>
+      <input placeholder="Correo Electronico" formControlName="email" type="text" (focus)="focused = true" (blur)="onBlur($event)" id="email" required>
+    </div>
+
+    <div class="form-field">
+      <label [ngClass]="focused ? 'label-focused' : ''">Contraseña</label>
+      <input placeholder="Contraseña" formControlName="password" type="password" (focus)="focused = true" (blur)="onBlur($event)" id="password" required>
+    </div>
+    
+    <a class="forgot-password-link" routerLink="/password-reset">Olvide Mi Contraseña?</a>
+    
+    <app-button label="Iniciar sesión"></app-button>
+
+  </form>
+  
+  <p class="footer-text">Soy nuevo usuario, <a routerLink="/register">Registrarse</a></p>
+</ion-content>

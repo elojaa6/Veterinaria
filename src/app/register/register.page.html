@@ -1,0 +1,21 @@
+<ion-content class="ion-padding">
+  <h1>Crear cuenta</h1>
+  <h3>Regístrate para empezar!</h3>
+
+  <form [formGroup]="userRegisterForm" (ngSubmit)="register()">
+    <div class="form-field">
+      <label [ngClass]="focused ? 'label-focused' : ''">Correo Electronico</label>
+      <input placeholder="Correo Electronico" formControlName="email" type="text" (focus)="focused = true" (blur)="onBlur($event)" id="email" required>
+    </div>
+
+    <div class="form-field">
+      <label [ngClass]="focused ? 'label-focused' : ''">Contraseña</label>
+      <input placeholder="Contraseña" formControlName="password" type="password" (focus)="focused = true" (blur)="onBlur($event)" id="password" required>
+    </div>
+    
+    <app-button label="Registrarse"></app-button>
+
+  </form>
+
+  <p class="footer-text">Ya soy miembro, <a routerLink="/login">Iniciar sesión</a></p>
+</ion-content>
