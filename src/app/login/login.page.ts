@@ -47,15 +47,15 @@ export class LoginPage implements OnInit {
       this.auth
         .login(email, password)
         .then(() => {
-          if (this.auth.isEmailVerified) {
+          //if (this.auth.isEmailVerified) {
             console.log('login');
-            console.log(localStorage.setItem('ingresado', 'true'));
+            //console.log(localStorage.setItem('ingresado', 'true'));
             this.router.navigate(['/home']);
-          }else{
+          /*}else{
             this.correo('Revisar Su Correo');
             console.log(this.auth.isEmailVerified)
           }
-          return false;
+          return false;*/
         })
       .catch(error => {
         console.error(error);

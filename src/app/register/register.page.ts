@@ -48,7 +48,7 @@ export class RegisterPage implements OnInit {
       console.log(email, password);
       this.auth.register(email, password).then(() => {
         console.log('register');
-        this.auth.SendVerificationMail();
+        //this.auth.SendVerificationMail();
         //this.router.navigate(['/login']);
       })
       .catch(error => {
