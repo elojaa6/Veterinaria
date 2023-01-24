@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { AuthService } from './services/auth.service';
 
 @Component({
@@ -8,8 +9,15 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private router: Router,
-    private auth: AuthService) {}
+
+  /*user$ = this.auth.authState$.pipe(
+    filter(state => state ? true : false)
+  );*/
+
+  constructor(
+    private router: Router,
+    private auth: AuthService
+    ) {}
 
     exit(){
       this.auth.logout();

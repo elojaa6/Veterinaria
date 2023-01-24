@@ -1,6 +1,13 @@
 <ion-app>
   <ion-menu menuId="main-menu" contentId="main">
     <ion-content>
+
+      <!--ng-container *ngIf="user$ | async as user">
+        <ion-list-header></ion-list-header>
+        <ion-note>{{ user.email }}</ion-note>
+
+      </ng-container-->
+
       <div class="menu-header-bg"></div>
       <div class="header-content">
         <img src="../assets/person.png" alt="">
@@ -11,10 +18,11 @@
       </div>
 
       <ion-list class="menu-items" lines="none">
-        <ion-item class="active" routerLink="" (click)="exit()">
-          <ion-icon name="exit-outline"></ion-icon> Salir
-        </ion-item>
-        
+        <ion-menu-toggle>
+          <ion-item class="active" routerLink="" (click)="exit()">
+            <ion-icon name="exit-outline"></ion-icon> Salir
+          </ion-item>
+        </ion-menu-toggle>
 
       </ion-list>
 

@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
+import { Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
@@ -11,9 +11,13 @@ import { User } from '../entidades/User';
 export class AuthService {
 
   userData: any;
+
+  //authState$ = authState(this.afAuth);
+
   constructor(
     private afStore: AngularFirestore,
     private afAuth : AngularFireAuth,
+    //private auth : Auth,
     private router: Router,
     private ngZone: NgZone
   ) { 
