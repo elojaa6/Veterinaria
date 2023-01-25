@@ -10,7 +10,6 @@
 
       <div class="menu-header-bg"></div>
       <div class="header-content">
-        <img src="../assets/person.png" alt="">
         <ion-label>
           <h2>UsuarioName</h2>
           <p>Username</p>
@@ -18,6 +17,16 @@
       </div>
 
       <ion-list class="menu-items" lines="none">
+        <ion-menu-toggle>
+          <ion-item class="active" routerLink="../crear-usuario" >
+            <ion-icon name="chatbubble-ellipses-outline"></ion-icon> Mensaje
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item class="active" routerLink="../home" >
+            <ion-icon name="chatbubbles-outline"></ion-icon> Chat
+          </ion-item>
+        </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item class="active" routerLink="" (click)="exit()">
             <ion-icon name="exit-outline"></ion-icon> Salir

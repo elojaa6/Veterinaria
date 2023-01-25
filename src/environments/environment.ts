@@ -5,13 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyAWpBTCUwDlmUwSswkn8MIX7rm-WaAPZY4",
-    authDomain: "veterinaria-c9e38.firebaseapp.com",
-    projectId: "veterinaria-c9e38",
-    storageBucket: "veterinaria-c9e38.appspot.com",
-    messagingSenderId: "46345560874",
-    appId: "1:46345560874:web:feec80f245a33c97c27453",
-    measurementId: "G-EK0HMXQ8YJ"
+    apiKey: "AIzaSyBW7093eiDUBGwdf9qwktjLpbd4oRDxgdI",
+    authDomain: "prueba-e1483.firebaseapp.com",
+    databaseURL: "https://prueba-e1483-default-rtdb.firebaseio.com",
+    projectId: "prueba-e1483",
+    storageBucket: "prueba-e1483.appspot.com",
+    messagingSenderId: "731329762120",
+    appId: "1:731329762120:web:ea9d0b8c71a8ea79a8d97d",
+    measurementId: "G-C3F0679GG7"
   }
 };
 

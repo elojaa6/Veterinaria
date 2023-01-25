@@ -36,21 +36,22 @@ export class LoginPage implements OnInit {
     }
   }
 
-  login(){
+   async login(){
     if (!this.loginForm.valid) {
       this.mostrarMensaje();
       return false;
     }else{
       const { email, password} = this.loginForm.getRawValue();
       console.log(email, password);
-      console.log(this.auth.isEmailVerified)
-      this.auth
+      //console.log(this.auth.isEmailVerified)
+      await this.auth
         .login(email, password)
         .then(() => {
           //if (this.auth.isEmailVerified) {
             console.log('login');
             //console.log(localStorage.setItem('ingresado', 'true'));
             this.router.navigate(['/home']);
+            this.loginForm.reset;
           /*}else{
             this.correo('Revisar Su Correo');
             console.log(this.auth.isEmailVerified)

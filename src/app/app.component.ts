@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { AuthService } from './services/auth.service';
+import { Storage } from '@ionic/storage-angular';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +18,12 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    private auth: AuthService
+    private auth: AuthService,
+    private afStorage: AngularFireStorage
     ) {}
+
+  async ngOnit(){
+  }
 
     exit(){
       this.auth.logout();

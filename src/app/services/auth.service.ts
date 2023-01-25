@@ -1,5 +1,4 @@
 import { Injectable, NgZone } from '@angular/core';
-import { Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
@@ -39,8 +38,15 @@ export class AuthService {
   }
 
   // Registrar usuario con correo electrónico/contraseña
-  login(email, password){
-    return this.afAuth.signInWithEmailAndPassword(email, password);
+  async login(email, password): Promise<User>{
+    try{
+      const {user} = await this.afAuth.signInWithEmailAndPassword(email, password);
+      this.SetUserData(user);
+      return user;
+    }catch(error){
+      console.log('Error -> ', error)
+    }
+    return null;
   }
 
   // Verificación por correo electrónico al registrarse un nuevo usuario
@@ -86,11 +92,8 @@ export class AuthService {
     const userData: User = {
       uid: user.uid,
       email: user.email,
-      nombre: user.nombre,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
-      direccion: user.direccion,
-      telefono: user.telefono,
+      emailVerified: user.emailVerified
     };
     return userRef.set(userData, {
       merge: true,

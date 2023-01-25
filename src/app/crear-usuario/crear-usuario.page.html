@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar class="ios hydrated">
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+    
+    <ion-title class="ios title-ios hydrated">Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="usuarioForm" (ngSubmit)="saveCita()">
+      <ion-item>
+        <ion-label position="floating">Nombre y Apellido</ion-label>
+        <ion-input formControlName="nombres" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Mensaje</ion-label>
+        <ion-input formControlName="mensaje" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Enviar Mensaje</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="danger" shape="full" expand="block" routerLink="/home">Cancelar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>
